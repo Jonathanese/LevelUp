@@ -220,14 +220,28 @@ namespace _6.Calculator
 
         private void bMMinus_Click(object sender, EventArgs e)
         {
-            MemVal -= Convert.ToDouble(tbMain.Text);
-            lMemVal.Text = MemVal.ToString();
+            try
+            {
+                MemVal -= Convert.ToDouble(tbMain.Text);
+                lMemVal.Text = MemVal.ToString();
+            }
+            catch (FormatException)
+            {
+                return;
+            }
         }
 
         private void mMPlus_Click(object sender, EventArgs e)
         {
-            MemVal += Convert.ToDouble(lResult.Text);
-            lMemVal.Text = MemVal.ToString();
+            try
+            {
+                MemVal += Convert.ToDouble(tbMain.Text);
+                lMemVal.Text = MemVal.ToString();
+            }
+            catch (FormatException)
+            {
+                return;
+            }
         }
 
         #endregion Memory Buttons
